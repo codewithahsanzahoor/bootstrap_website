@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Bootstrap demo</title>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+			crossorigin="anonymous"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+		/>
+
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<!-- =============================================
+    =             Start of Section comment block          =
+    =============================================-->
+
+		<nav class="navbar navbar-expand-lg bg-secondary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#"
+					><img
+						src="data:image/png;base64,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"
+						alt=""
+						width="30px"
+				/></a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">About us</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Client</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								Services
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Web Development</a></li>
+								<li><a class="dropdown-item" href="#">App Development</a></li>
+								<li><hr class="dropdown-divider" /></li>
+								<li>
+									<a class="dropdown-item" href="#">SEO</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Contact Us</a>
+						</li>
+					</ul>
+					<form class="d-flex" role="search">
+						<input
+							class="form-control me-2"
+							type="search"
+							placeholder="Search"
+							aria-label="Search"
+						/>
+						<button class="btn btn-outline-info" type="submit">Search</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+
+		<!--=====   End of Section comment block  ======-->
+
+		<!-- =============================================
+    =             Start of Carousel          =
+    =============================================-->
+
+		<div id="carouselExampleCaptions" class="carousel slide">
+			<div class="carousel-indicators">
+				<button
+					type="button"
+					data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="0"
+					class="active"
+					aria-current="true"
+					aria-label="Slide 1"
+				></button>
+				<button
+					type="button"
+					data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="1"
+					aria-label="Slide 2"
+				></button>
+				<button
+					type="button"
+					data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="2"
+					aria-label="Slide 3"
+				></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img
+						src="https://images.pexels.com/photos/9992330/pexels-photo-9992330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+						class="d-block w-100"
+						alt="..."
+					/>
+					<div class="carousel-caption d-none d-md-block">
+						<h5>First slide label</h5>
+						<p>Some representative placeholder content for the first slide.</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img
+						src="https://images.pexels.com/photos/8981855/pexels-photo-8981855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+						class="d-block w-100"
+						alt="..."
+					/>
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Second slide label</h5>
+						<p>Some representative placeholder content for the second slide.</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img
+						src="https://images.pexels.com/photos/4676396/pexels-photo-4676396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+						class="d-block w-100"
+						alt="..."
+					/>
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Third slide label</h5>
+						<p>Some representative placeholder content for the third slide.</p>
+					</div>
+				</div>
+			</div>
+			<button
+				class="carousel-control-prev"
+				type="button"
+				data-bs-target="#carouselExampleCaptions"
+				data-bs-slide="prev"
+			>
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button
+				class="carousel-control-next"
+				type="button"
+				data-bs-target="#carouselExampleCaptions"
+				data-bs-slide="next"
+			>
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+
+		<!--=====   End of Carousel  ======-->
+
+		<!-- =============================================
+    =             Start of section main          =
+    =============================================-->
+
+		<!------------  Subsection container  ------------>
+
+		<div class="container-fluid">
+			<!-- tagline -->
+			<div class="row">
+				<div class="col-12">
+					<p class="text-center mt-4 mb-4">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+						veritatis recusandae ea quis pariatur minus porro rem illo fugit
+						excepturi nisi, harum provident?
+					</p>
+				</div>
+			</div>
+
+			<!-- feature -->
+			<div class="row justify-content-evenly">
+				<div class="col-md-3 text-center mt-4">
+					<h1><i class="bi bi-file-code-fill text-success"></i></h1>
+					<h5>Build for Developer</h5>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. A, ratione!
+					</p>
+				</div>
+
+				<div class="col-md-3 text-center mt-4">
+					<h1>
+						<i class="bi bi-easel-fill align-self-center text-danger"></i>
+					</h1>
+					<h5>Build for Developer</h5>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. A, ratione!
+					</p>
+				</div>
+
+				<div class="col-md-3 text-center mt-4">
+					<h1>
+						<i
+							class="bi bi-calendar-range-fill align-self-center text-primary"
+						></i>
+					</h1>
+					<h5>Build for Developer</h5>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. A, ratione!
+					</p>
+				</div>
+			</div>
+			<hr />
+
+			<!------------  Subsection growth  ------------>
+			<div class="row justify-content-evenly pt-2">
+				<div class="col-md-5 mb-3">
+					<img
+						class="img-fluid"
+						src="https://images.pexels.com/photos/4170290/pexels-photo-4170290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+						alt=""
+					/>
+				</div>
+
+				<div class="col-md-5 pt-4 mb-4">
+					<h5 class="mt-4">Website Development</h5>
+					<div
+						class="progress"
+						role="progressbar"
+						aria-label="Success example"
+						aria-valuenow="25"
+						aria-valuemin="0"
+						aria-valuemax="100"
+					>
+						<div class="progress-bar bg-success" style="width: 25%"></div>
+					</div>
+
+					<h5 class="mt-4">App Development</h5>
+					<div
+						class="progress"
+						role="progressbar"
+						aria-label="Info example"
+						aria-valuenow="50"
+						aria-valuemin="0"
+						aria-valuemax="100"
+					>
+						<div class="progress-bar bg-info" style="width: 50%"></div>
+					</div>
+
+					<h5 class="mt-4">Software Development</h5>
+					<div
+						class="progress"
+						role="progressbar"
+						aria-label="Warning example"
+						aria-valuenow="75"
+						aria-valuemin="0"
+						aria-valuemax="100"
+					>
+						<div class="progress-bar bg-warning" style="width: 75%"></div>
+					</div>
+
+					<h5 class="mt-4">Marketing</h5>
+					<div
+						class="progress"
+						role="progressbar"
+						aria-label="Warning example"
+						aria-valuenow="75"
+						aria-valuemin="0"
+						aria-valuemax="100"
+					>
+						<div class="progress-bar bg-secondary" style="width: 75%"></div>
+					</div>
+
+					<h5 class="mt-4">SEO</h5>
+					<div
+						class="progress"
+						role="progressbar"
+						aria-label="Danger example"
+						aria-valuenow="100"
+						aria-valuemin="0"
+						aria-valuemax="100"
+					>
+						<div class="progress-bar bg-danger" style="width: 100%"></div>
+					</div>
+				</div>
+			</div>
+
+			<!------------  Subsection contact  ------------>
+			<div
+				class="row justify-content-evenly pt-4 pb-4"
+				style="background-color: antiquewhite"
+			>
+				<div class="col-md-5">
+					<h3 class="mb-3">Contact Form</h3>
+					<div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label"
+							>Email address</label
+						>
+						<input
+							type="email"
+							class="form-control"
+							id="exampleFormControlInput1"
+							placeholder="name@example.com"
+						/>
+					</div>
+
+					<div class="mb-3">
+						<label for="exampleFormControlInput2" class="form-label"
+							>Full Name</label
+						>
+						<input
+							type="text"
+							class="form-control"
+							id="exampleFormControlInput2"
+							placeholder="fullName"
+						/>
+					</div>
+
+					<div class="mb-3">
+						<label for="exampleFormControlTextarea1" class="form-label"
+							>Example textarea</label
+						>
+						<textarea
+							class="form-control"
+							id="exampleFormControlTextarea1"
+							rows="3"
+						></textarea>
+					</div>
+					<button class="btn btn-primary" type="submit">Submit</button>
+				</div>
+
+				<div class="col-md-5">
+					<h3 class="mb-4">Address</h3>
+					<p>
+						F7H8+HFV, Canal Rd, Quaid-i-Azam <br />
+						Campus, Lahore, Punjab <br />
+						University of the Punjab, address <br />
+						<i class="bi bi-telephone"></i> :215813035
+					</p>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.50748283094!2d-73.9937889249837!3d40.75086173523722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259ae82c646df%3A0xdfa8bb42d806d9e0!2sLIRR!5e0!3m2!1sen!2s!4v1684234290866!5m2!1sen!2s"
+						width="100%"
+						height="250"
+						style="border: 0"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+			</div>
+
+			<!------------  Subsection faq  ------------>
+			<div class="row justify-content-evenly pt-5 pb-5">
+				<div class="col-md-10">
+					<h3 class="text-center pb-3">FAQ</h3>
+					<div
+						class="accordion accordion-flush border"
+						id="accordionFlushExample"
+					>
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#flush-collapseOne"
+									aria-expanded="false"
+									aria-controls="flush-collapseOne"
+								>
+									Accordion Item #1
+								</button>
+							</h2>
+							<div
+								id="flush-collapseOne"
+								class="accordion-collapse collapse"
+								data-bs-parent="#accordionFlushExample"
+							>
+								<div class="accordion-body">
+									Placeholder content for this accordion, which is intended to
+									demonstrate the <code>.accordion-flush</code> class. This is
+									the first item's accordion body.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#flush-collapseTwo"
+									aria-expanded="false"
+									aria-controls="flush-collapseTwo"
+								>
+									Accordion Item #2
+								</button>
+							</h2>
+							<div
+								id="flush-collapseTwo"
+								class="accordion-collapse collapse"
+								data-bs-parent="#accordionFlushExample"
+							>
+								<div class="accordion-body">
+									Placeholder content for this accordion, which is intended to
+									demonstrate the <code>.accordion-flush</code> class. This is
+									the second item's accordion body. Let's imagine this being
+									filled with some actual content.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#flush-collapseThree"
+									aria-expanded="false"
+									aria-controls="flush-collapseThree"
+								>
+									Accordion Item #3
+								</button>
+							</h2>
+							<div
+								id="flush-collapseThree"
+								class="accordion-collapse collapse"
+								data-bs-parent="#accordionFlushExample"
+							>
+								<div class="accordion-body">
+									Placeholder content for this accordion, which is intended to
+									demonstrate the <code>.accordion-flush</code> class. This is
+									the third item's accordion body. Nothing more exciting
+									happening here in terms of content, but just filling up the
+									space to make it look, at least at first glance, a bit more
+									representative of how this would look in a real-world
+									application.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!------------  Subsection footer-menu  ------------>
+			<div class="row justify-content-evenly bg-dark text-white">
+				<div class="col-md-3 pt-4">
+					<h5 class="pb-2">CODE WITH AHSAN</h5>
+					<p>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia ad
+						asperiores beatae, ea natus, neque, tempore dolore sit dolores
+						explicabo repellendus repudiandae veritatis.
+					</p>
+				</div>
+
+				<div class="col-md-3 pt-4">
+					<h5 class="pb-2">Important Links</h5>
+					<a class="text-decoration-none link-light" href="#">Home</a> <br />
+					<a class="text-decoration-none link-light" href="#">Aboutus</a> <br />
+					<a class="text-decoration-none link-light" href="#">Contact</a> <br />
+					<a class="text-decoration-none link-light" href="#">Client</a> <br />
+				</div>
+
+				<div class="col-md-3 pt-4">
+					<h5 class="pb-2">Contactus</h5>
+					<p>
+						F7H8+HFV, Canal Rd, Quaid-i-Azam <br />
+						Campus, Lahore, Punjab <br />
+						University of the Punjab, address <br />
+						<i class="bi bi-telephone"></i> :215813035
+					</p>
+				</div>
+			</div>
+
+			<!------------  Subsection footer  ------------>
+			<div class="row">
+				<div class="col-12 text-center bg-secondary text-white p-2">
+					<p class="mb-0">
+						CopyRight &copy; all reserved to AhsanZahoor Coporation
+					</p>
+				</div>
+			</div>
+
+			<!--=====   End of section main  ======-->
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
